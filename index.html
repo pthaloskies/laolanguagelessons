@@ -4,42 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everyday Lao - Language Learning</title>
-  <!-- Force all relative links to resolve from the repo root path -->
-  <base href="/Lao-Language-Learning/" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Noto Sans',sans-serif; background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%); color:#5a4721; padding:20px; line-height:1.6; }
-    .container { max-width:1400px; margin:0 auto; background:white; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,.1); overflow:hidden; }
-    header { background:linear-gradient(135deg,#dc7009 0%,#5a4721 100%); color:white; padding:40px; text-align:center; }
+    body {
+      font-family:'Noto Sans',sans-serif;
+      background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+      color:#5a4721; padding:20px; line-height:1.6;
+    }
+    .container {
+      max-width:1400px; margin:0 auto; background:white;
+      border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,.1); overflow:hidden;
+    }
+    header {
+      background:linear-gradient(135deg,#dc7009 0%,#5a4721 100%);
+      color:white; padding:40px; text-align:center;
+    }
     header h1 { font-size:2.5em; margin-bottom:10px; font-weight:600; }
     .tip { background:rgba(255,255,255,.2); padding:15px 20px; border-radius:8px; margin-top:20px; font-size:.95em; }
     .content { padding:40px; }
     .section { margin-bottom:50px; }
-    .section-title { font-size:1.8em; color:#5a4721; margin-bottom:25px; padding-bottom:10px; border-bottom:3px solid #444319; font-weight:600; }
+    .section-title {
+      font-size:1.8em; color:#5a4721; margin-bottom:25px;
+      padding-bottom:10px; border-bottom:3px solid #444319; font-weight:600;
+    }
     table { width:100%; border-collapse:collapse; margin-bottom:20px; }
-    th { background:#f8f9fa; padding:15px; text-align:left; font-weight:600; color:#5a4721; border-bottom:2px solid #dee2e6; font-size:.9em; text-transform:uppercase; letter-spacing:.5px; }
+    th {
+      background:#f8f9fa; padding:15px; text-align:left;
+      font-weight:600; color:#5a4721; border-bottom:2px solid #dee2e6;
+      font-size:.9em; text-transform:uppercase; letter-spacing:.5px;
+    }
     td { padding:18px 15px; border-bottom:1px solid #f1f3f5; }
     tr:hover { background-color:#f8f9ff; transition:background-color .2s ease; }
     .lao-script { font-family:'Noto Sans Lao',sans-serif; font-size:1.3em; font-weight:500; color:#2d3748; }
     .phonetic { color:#2d3748; font-size:1.1em; font-weight:400; }
     .notes { color:#2d3748; font-size:1.1em; font-weight:400; font-style:italic; }
-    .audio-btn { background:linear-gradient(135deg,#264933 0%,#55a171 80%); border:none; color:white; width:40px; height:40px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .3s ease; box-shadow:0 4px 12px rgba(102,126,234,.3); }
+    .audio-btn {
+      background:linear-gradient(135deg,#264933 0%,#55a171 80%);
+      border:none; color:white; width:40px; height:40px; border-radius:50%;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+      transition:all .3s ease; box-shadow:0 4px 12px rgba(102,126,234,.3);
+    }
     .audio-btn:hover { transform:scale(1.1); box-shadow:0 6px 20px rgba(47,98,103,.4); }
     .audio-btn:active { transform:scale(.85); }
     .audio-btn svg { width:20px; height:20px; fill:white; }
     .audio-btn.playing { background:linear-gradient(135deg,#55a171 0%,#264933 80%); }
-    @media (max-width:768px){ body{padding:10px;} .content{padding:20px;} header{padding:30px 20px;} header h1{font-size:1.8em;} table{font-size:.9em;} th,td{padding:12px 8px;} .lao-script{font-size:1.1em;} }
+    @media (max-width:768px){
+      body{padding:10px;} .content{padding:20px;} header{padding:30px 20px;}
+      header h1{font-size:1.8em;} table{font-size:.9em;}
+      th,td{padding:12px 8px;} .lao-script{font-size:1.1em;}
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
       <h1>Everyday Lao</h1>
       <p style="font-size:1.1em;margin-top:10px;">English • ລາວ • Pronunciation • Context</p>
-      <div class="tip"><strong>💡 Tip:</strong> Lao is tonal, but that comes in time with the rhythm of the language. Add <span style="font-family:'Noto Sans Lao',sans-serif;font-size:1.1em;">ເດີ້</span> (der) to be more polite and sound more local.</div>
+      <div class="tip"><strong>💡 Tip:</strong> Lao is tonal, but that comes in time with the rhythm of the language. Add 
+        <span style="font-family:'Noto Sans Lao',sans-serif;font-size:1.1em;">ເດີ້</span> (der) to be more polite and sound more local.
+      </div>
     </header>
 
     <div class="content">
@@ -48,7 +78,7 @@
         <table>
           <thead>
             <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th style="width:60px;"></th>
+              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
             </tr>
           </thead>
           <tbody>
@@ -57,83 +87,28 @@
               <td class="lao-script">ເຈົ້າກັນ</td>
               <td class="phonetic">cəə̌ gǎn</td>
               <td class="notes">Most Casual</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/seeyou.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+              <td><button class="audio-btn" onclick="playAudio('seeyou.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
             </tr>
             <tr>
               <td>See you tomorrow</td>
               <td class="lao-script">ເຈົ້າກັນມື້ອື່ນ</td>
               <td class="phonetic">cəə̌ gǎn mʉ̂ʉ ʉʉn</td>
               <td class="notes">Common</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/seeyoutomorrow.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+              <td><button class="audio-btn" onclick="playAudio('seeyoutomorrow.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
             </tr>
             <tr>
               <td>See you next time</td>
               <td class="lao-script">ເຈົ້າກັນມື້ໜ້າ</td>
               <td class="phonetic">cəə̌ gǎn mʉ̂ʉ na̱a</td>
               <td class="notes">Literally "next day" → "next time."</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/seeyounexttime.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+              <td><button class="audio-btn" onclick="playAudio('seeyounexttime.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
             </tr>
             <tr>
               <td>I'll go first (bye)</td>
               <td class="lao-script">ກັບກ່ອນເດີ້</td>
               <td class="phonetic">káb gɔɔn də̂ə</td>
               <td class="notes">Natural farewell for leaving a group.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/illgofirstbye.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Core Q&A</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th style='width:60px;'></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>What's this?</td>
-              <td class="lao-script">ອັນນີ້ແມ່ນຫຍັງ?</td>
-              <td class="phonetic">ǎn-nêe mɛɛn ɲǎŋ</td>
-              <td class="notes">Pointing near you.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/whatsthis.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>What's that (there)?</td>
-              <td class="lao-script">ອັນນັ້ນແມ່ນຫຍັງ?</td>
-              <td class="phonetic">ǎn-nân mɛɛn ɲǎŋ</td>
-              <td class="notes">Pointing farther away.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/whatsthat.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>How much (this)?</td>
-              <td class="lao-script">ອັນນີ້ເທົ່າໃດ?</td>
-              <td class="phonetic">ǎn-nêe thao dǎi</td>
-              <td class="notes">Market staple question.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/howmuchthis.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>How much? (short)</td>
-              <td class="lao-script">ເທົ່າໃດ?</td>
-              <td class="phonetic">thao dǎi</td>
-              <td class="notes">One-word price ask.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/howmuch.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Where is … ?</td>
-              <td class="lao-script">… ຢູ່ໃສ?</td>
-              <td class="phonetic">... yuu sǎi</td>
-              <td class="notes">Add place before it.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/whereis.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Which way?</td>
-              <td class="lao-script">ທາງໃດ?</td>
-              <td class="phonetic">tháang dǎi</td>
-              <td class="notes">Direction query.</td>
-              <td><button class="audio-btn" onclick="playAudio('audio/whichway.mp3?v=5', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+              <td><button class="audio-btn" onclick="playAudio('illgofirstbye.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
             </tr>
           </tbody>
         </table>
@@ -142,13 +117,43 @@
   </div>
 
   <script>
-    let currentAudio = null; let currentButton = null;
-    function playAudio(src, button) {
-      if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; if (currentButton) currentButton.classList.remove('playing'); }
-      if (currentButton === button && button.classList.contains('playing')) { currentAudio = null; currentButton = null; return; }
-      const audio = new Audio(src); currentAudio = audio; currentButton = button; button.classList.add('playing');
-      audio.play().catch(err => { console.error('Audio playback failed:', err, src); button.classList.remove('playing'); });
-      audio.onended = () => { button.classList.remove('playing'); currentAudio = null; currentButton = null; };
+    const BASE = "audio/";
+    const VERSION = 5;
+    let currentAudio = null, currentButton = null;
+
+    function playAudio(filename, button) {
+      const src = `${BASE}${filename}?v=${VERSION}`;
+
+      // Stop any currently playing audio
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        if (currentButton) currentButton.classList.remove("playing");
+      }
+
+      // Toggle off if same button clicked
+      if (currentButton === button && button.classList.contains("playing")) {
+        currentAudio = null;
+        currentButton = null;
+        return;
+      }
+
+      // Create and play new audio
+      const audio = new Audio(src);
+      currentAudio = audio;
+      currentButton = button;
+      button.classList.add("playing");
+
+      audio.play().catch(err => {
+        console.error("Audio playback failed:", err, src);
+        button.classList.remove("playing");
+      });
+
+      audio.onended = () => {
+        button.classList.remove("playing");
+        currentAudio = null;
+        currentButton = null;
+      };
     }
   </script>
 </body>
