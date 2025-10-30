@@ -1,1158 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everyday Lao - Language Learning</title>
+<!-- ========== Introductions & Locating People Section ========== -->
+<div class="section">
+  <h2 class="section-title">Introductions & Locating People</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ... other rows ... -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+      <tr>
+        <td>Who are you looking for?</td>
+        <td class="lao-script">ມາຫາໃຜ?</td>
+        <td class="phonetic">maa hăa phái?</td>
+        <td class="notes">Lit: "Come to find who?"</td>
+        <td><button class="audio-btn" onclick="playAudio('who_are_you_looking_for.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>I'm looking for ___</td>
+        <td class="lao-script">ຂ້ອຍມາຫາ ___</td>
+        <td class="phonetic">khōi maa hăa ___</td>
+        <td class="notes">Lit: "I come to find ___"</td>
+        <td><button class="audio-btn" onclick="playAudio('im_looking_for.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>Is ___ here?</td>
+        <td class="lao-script">___ ຢູ່ບໍ່?</td>
+        <td class="phonetic">___ yuu bɔ̌ɔ?</td>
+        <td class="notes">Asking for presence</td>
+        <td><button class="audio-btn" onclick="playAudio('is_so_and_so_here.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>Yes, is here.</td>
+        <td class="lao-script">ຢູ່</td>
+        <td class="phonetic">yuu</td>
+        <td class="notes">Answer: "Yes, here."</td>
+        <td><button class="audio-btn" onclick="playAudio('yes.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>No, not here.</td>
+        <td class="lao-script">ບໍ່ຢູ່</td>
+        <td class="phonetic">bɔ̌ɔ yuu</td>
+        <td class="notes">Answer: "No, not here."</td>
+        <td><button class="audio-btn" onclick="playAudio('not_here.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>Please wait a moment.</td>
+        <td class="lao-script">ຖ້າຈັກໜ້ອຍເດີ້</td>
+        <td class="phonetic">thâa cǎk nɔɔi dǝ̂ǝ</td>
+        <td class="notes">Polite request</td>
+        <td><button class="audio-btn" onclick="playAudio('please_wait_a_moment.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>He/she will be here shortly.</td>
+        <td class="lao-script">ຈັກໜ້ອຍລາວຊິມາ</td>
+        <td class="phonetic">cǎk nɔɔi láo si mâa</td>
+        <td class="notes">Lit: "A moment, he/she will come."</td>
+        <td><button class="audio-btn" onclick="playAudio('he_will_be_here_shortly.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:'Noto Sans',sans-serif;
-      background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
-      color:#5a4721; padding:20px; line-height:1.6;
-    }
-    .container {
-      max-width:1400px; margin:0 auto; background:white;
-      border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,.1); overflow:hidden;
-    }
-    header {
-      background:linear-gradient(135deg,#dc7009 0%,#5a4721 100%);
-      color:white; padding:40px; text-align:center;
-    }
-    header h1 { font-size:2.5em; margin-bottom:10px; font-weight:600; }
-    .tip { background:rgba(255,255,255,.2); padding:15px 20px; border-radius:8px; margin-top:20px; font-size:.95em; }
-    .content { padding:40px; }
-    .section { margin-bottom:50px; }
-    .section-title {
-      font-size:1.8em; color:#5a4721; margin-bottom:25px;
-      padding-bottom:10px; border-bottom:3px solid #444319; font-weight:600;
-    }
-    table { width:100%; border-collapse:collapse; margin-bottom:20px; }
-    th {
-      background:#f8f9fa; padding:15px; text-align:left;
-      font-weight:600; color:#5a4721; border-bottom:2px solid #dee2e6;
-      font-size:.9em; text-transform:uppercase; letter-spacing:.5px;
-    }
-    td { padding:18px 15px; border-bottom:1px solid #f1f3f5; }
-    tr:hover { background-color:#f8f9ff; transition:background-color .2s ease; }
-    .lao-script { font-family:'Noto Sans Lao',sans-serif; font-size:1.3em; font-weight:500; color:#2d3748; }
-    .phonetic { color:#2d3748; font-size:1.1em; font-weight:400; }
-    .notes { color:#2d3748; font-size:1.1em; font-weight:400; font-style:italic; }
-    .audio-btn {
-      background:linear-gradient(135deg,#264933 0%,#55a171 80%);
-      border:none; color:white; width:40px; height:40px; border-radius:50%;
-      cursor:pointer; display:flex; align-items:center; justify-content:center;
-      transition:all .3s ease; box-shadow:0 4px 12px rgba(102,126,234,.3);
-    }
-    .audio-btn:hover { transform:scale(1.1); box-shadow:0 6px 20px rgba(47,98,103,.4); }
-    .audio-btn:active { transform:scale(.85); }
-    .audio-btn svg { width:20px; height:20px; fill:white; }
-    .audio-btn.playing { background:linear-gradient(135deg,#55a171 0%,#264933 80%); }
-    @media (max-width:768px){
-      body{padding:10px;} .content{padding:20px;} header{padding:30px 20px;}
-      header h1{font-size:1.8em;} table{font-size:.9em;}
-      th,td{padding:12px 8px;} .lao-script{font-size:1.1em;}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <header>
-      <h1>Everyday Lao</h1>
-      <p style="font-size:1.1em;margin-top:10px;">English • ລາວ • Pronunciation • Context</p>
-      <div class="tip"><strong>💡 Tip:</strong> Lao is tonal, but that comes in time with the rhythm of the language. Add
-        <span style="font-family:'Noto Sans Lao',sans-serif;font-size:1.1em;">ເດີ້</span> (də̂ə) to be more polite and sound more local.
-      </div>
-    </header>
-
-    <div class="content">
-      <div class="section">
-        <h2 class="section-title">Greetings & Goodbyes</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>See you (friendly)</td>
-              <td class="lao-script">ເຈີກັນ</td>
-              <td class="phonetic">cə̌ə gǎn</td>
-              <td class="notes">Most Casual</td>
-              <td><button class="audio-btn" onclick="playAudio('seeyou.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>See you tomorrow</td>
-              <td class="lao-script">ເຈີກັນມື້ອື່ນ</td>
-              <td class="phonetic">cə̌ə gǎn mʉ̂ʉ ʉʉn</td>
-              <td class="notes">Common</td>
-              <td><button class="audio-btn" onclick="playAudio('see_you_tomorrow.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>See you next time</td>
-              <td class="lao-script">ເຈີກັນມື້ໜ້າ</td>
-              <td class="phonetic">cə̌ə gǎn mʉ̂ʉ na᷆a </td>
-              <td class="notes">Literally "next day" → "next time."</td>
-              <td><button class="audio-btn" onclick="playAudio('see_you_next_time.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I'll go first (bye)</td>
-              <td class="lao-script">ກັບກ່ອນເດີ້</td>
-              <td class="phonetic">káb gɔɔn də̂ə</td>
-              <td class="notes">Natural farewell for leaving a group.</td>
-              <td><button class="audio-btn" onclick="playAudio('ill_go_first_bye.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Core Q&A</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>What's this?</td>
-              <td class="lao-script">ອັນນີ້ແມ່ນຫຍັງ?</td>
-              <td class="phonetic">ǎn nêe mɛɛn ɲǎŋ</td>
-              <td class="notes">Pointing near you</td>
-              <td><button class="audio-btn" onclick="playAudio('whats_this.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>What's that (there)?</td>
-              <td class="lao-script">ອັນນັ້ນແມ່ນຫຍັງ?</td>
-              <td class="phonetic">ǎn nân mɛɛn ɲǎŋ</td>
-              <td class="notes">Pointing farther away</td>
-              <td><button class="audio-btn" onclick="playAudio('whats_that.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>How much (this)?</td>
-              <td class="lao-script">ອັນນີ້ເທົ່າໃດ?</td>
-              <td class="phonetic">ǎn nêe thao dǎi</td>
-              <td class="notes">Market staple question</td>
-              <td><button class="audio-btn" onclick="playAudio('how_much_this.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>How much? (short)</td>
-              <td class="lao-script">ເທົ່າໃດ?</td>
-              <td class="phonetic">thao dǎi</td>
-              <td class="notes">One-word price ask</td>
-              <td><button class="audio-btn" onclick="playAudio('how_much.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Where is...?</td>
-              <td class="lao-script">... ຢູ່ໃສ?</td>
-              <td class="phonetic">... yuu sǎi </td>
-              <td class="notes">Add place before it</td>
-              <td><button class="audio-btn" onclick="playAudio('where_is.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Which way?</td>
-              <td class="lao-script">ທາງໃດ?</td>
-              <td class="phonetic">tháang dǎi</td>
-              <td class="notes">Direction query</td>
-              <td><button class="audio-btn" onclick="playAudio('which_way.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Place</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>here</td>
-              <td class="lao-script">ຢູ່ນີ້</td>
-              <td class="phonetic">yuu nîi</td>
-              <td class="notes">Neutral "here"</td>
-              <td><button class="audio-btn" onclick="playAudio('here.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>here</td>
-              <td class="lao-script">ຢູ່ພີ້</td>
-              <td class="phonetic">yuu phîi</td>
-              <td class="notes">Colloquial</td>
-              <td><button class="audio-btn" onclick="playAudio('here_local.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>there</td>
-              <td class="lao-script">ຢູ່ນັ້ນ</td>
-              <td class="phonetic">yuu nân</td>
-              <td class="notes">Neutral "there"</td>
-              <td><button class="audio-btn" onclick="playAudio('there.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>there</td>
-              <td class="lao-script">ຢູ່ຫັ້ນ</td>
-              <td class="phonetic">yuu ha᷆n</td>
-              <td class="notes">Colloquial "there"</td>
-              <td><button class="audio-btn" onclick="playAudio('there_local.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>bathroom where?</td>
-              <td class="lao-script">ຫ້ອງນໍ້າຢູ່ໃສ?</td>
-              <td class="phonetic">hɔ᷆ɔng nâm yuu sǎi</td>
-              <td class="notes">Polite ask for toilet</td>
-              <td><button class="audio-btn" onclick="playAudio('where_bathroom.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Permissions & Politeness</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Can I smoke here?</td>
-              <td class="lao-script">ຢູ່ນີ້ສູບຢາໄດ້ບໍ?</td>
-              <td class="phonetic">yuu nîi su᷆ub yǎa dâi bɔ̌ɔ?</td>
-              <td class="notes">Template: ...? for yes/no</td>
-              <td><button class="audio-btn" onclick="playAudio('can_i_smoke_here.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I don't know</td>
-              <td class="lao-script">ຂ້ອຍບໍ່ຮູ້</td>
-              <td class="phonetic">khɔ᷆i bɔɔ hûu</td>
-              <td class="notes">Drop ຂ້ອຍ for casual</td>
-              <td><button class="audio-btn" onclick="playAudio('i_dont_know.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>please (softener)</td>
-              <td class="lao-script">ເດີ້</td>
-              <td class="phonetic">dǝ̂ǝ</td>
-              <td class="notes">Friendly sentence-final particle</td>
-              <td><button class="audio-btn" onclick="playAudio('please.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>Thank you</td>
-              <td class="lao-script">ຂອບໃຈ</td>
-              <td class="phonetic">khɔ̌ɔp câi</td>
-              <td class="notes">General thanks</td>
-              <td><button class="audio-btn" onclick="playAudio('thank_you.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Time & Days</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>now</td>
-              <td class="lao-script">ຕອນນີ້</td>
-              <td class="phonetic">tɔ̌ɔn nîi</td>
-              <td class="notes">Current moment</td>
-              <td><button class="audio-btn" onclick="playAudio('now.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>o'clock / hour</td>
-              <td class="lao-script">ໂມງ</td>
-              <td class="phonetic">móong</td>
-              <td class="notes">Time-telling</td>
-              <td><button class="audio-btn" onclick="playAudio('hour.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>how many</td>
-              <td class="lao-script">ຈັກ</td>
-              <td class="phonetic">ják</td>
-              <td class="notes">Counting question word</td>
-              <td><button class="audio-btn" onclick="playAudio('how_many.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>What time now?</td>
-              <td class="lao-script">ຈັກໂມງແລ້ວ?</td>
-              <td class="phonetic">ják móong lɛ̂ɛo?</td>
-              <td class="notes">Colloquial time ask</td>
-              <td><button class="audio-btn" onclick="playAudio('what_time_now.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>Morning</td>
-              <td class="lao-script">ຕອນເຊົ້າ</td>
-              <td class="phonetic">tɔɔn sâo</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('morning.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Afternoon</td>
-              <td class="lao-script">ຕອນສວາຍ</td>
-              <td class="phonetic">tɔɔn suái</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('afternoon.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Evening</td>
-              <td class="lao-script">ຕອນແລງ</td>
-              <td class="phonetic">tɔɔn lɛ́ɛŋ</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('evening.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Night</td>
-              <td class="lao-script">ຕອນຄ່ຳ</td>
-              <td class="phonetic">tɔɔn kham</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('night.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Monday</td>
-              <td class="lao-script">ວັນຈັນ</td>
-              <td class="phonetic">wán jǎn</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('monday.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td class="lao-script">ວັນອັງຄານ</td>
-              <td class="phonetic">wán ǎngkháan</td>
-              <td class="notes">Long aa</td>
-              <td><button class="audio-btn" onclick="playAudio('tuesday.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td class="lao-script">ວັນພຸດ</td>
-              <td class="phonetic">wán phut</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('wednesday.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td class="lao-script">ວັນພະຫັດ</td>
-              <td class="phonetic">wán pha-hát</td>
-              <td class="notes">Final -t clipped, slight glottal break</td>
-              <td><button class="audio-btn" onclick="playAudio('thursday.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Friday</td>
-              <td class="lao-script">ວັນສຸກ</td>
-              <td class="phonetic">wán súk</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('friday.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Saturday</td>
-              <td class="lao-script">ວັນເສົາ</td>
-              <td class="phonetic">wán sǎo</td>
-              <td class="notes">Short rising</td>
-              <td><button class="audio-btn" onclick="playAudio('saturday.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Sunday</td>
-              <td class="lao-script">ວັນອາທິດ</td>
-              <td class="phonetic">wán ǎathit</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('sunday.mp3', this)"><svg viewBox='0 Grid' 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Feelings & Weather</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>hot</td>
-              <td class="lao-script">ຮ້ອນ</td>
-              <td class="phonetic">hɔ̂ɔn</td>
-              <td class="notes">Weather/body</td>
-              <td><button class="audio-btn" onclick="playAudio('hot.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>cold (body)</td>
-              <td class="lao-script">ໜາວ</td>
-              <td class="phonetic">nǎao</td>
-              <td class="notes">Body temperature</td>
-              <td><button class="audio-btn" onclick="playAudio('cold.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>cold (things)</td>
-              <td class="lao-script">ເຢັນ</td>
-              <td class="phonetic">yěn</td>
-              <td class="notes">Things/objects</td>
-              <td><button class="audio-btn" onclick="playAudio('cold_things.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I'm cold</td>
-              <td class="lao-script">ຂ້ອຍໜາວ</td>
-              <td class="phonetic">khɔ᷆i năao</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('im_cold.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Adjectives & Opposites</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>new</td>
-              <td class="lao-script">ໃໝ່</td>
-              <td class="phonetic">mai</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('new.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>old</td>
-              <td class="lao-script">ເກົ່າ</td>
-              <td class="phonetic">kao</td>
-              <td class="notes">thinɡs</td>
-              <td><button class="audio-btn" onclick="playAudio('old.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>big</td>
-              <td class="lao-script">ໃຫຍ່</td>
-              <td class="phonetic">ɲai</td>
-              <td class="notes">Start with 'ny' (canyon)</td>
-              <td><button class="audio-btn" onclick="playAudio('big.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>small</td>
-              <td class="lao-script">ນ້ອຍ</td>
-              <td class="phonetic">nɔ̂ɔy</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('little.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>cute / lovely</td>
-              <td class="lao-script">ນ່າຮັກ</td>
-              <td class="phonetic">naa hak</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('cute_lovely.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>you're cute</td>
-              <td class="lao-script">ເຈົ້ານ່າຮັກ</td>
-              <td class="phonetic">câo naa hak</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('youre_cute.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>ugly (strong)</td>
-              <td class="lao-script">ຂີ້ຮ້າຍ</td>
-              <td class="phonetic">khi᷆ihâai</td>
-              <td class="notes">Harsh; use carefully</td>
-              <td><button class="audio-btn" onclick="playAudio('ugly_strong.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>not beautiful</td>
-              <td class="lao-script">ບໍ່ງາມ</td>
-              <td class="phonetic">bɔɔ ŋáam</td>
-              <td class="notes">Softer phrasing</td>
-              <td><button class="audio-btn" onclick="playAudio('not_beautiful.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Likes & Preferences</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>like</td>
-              <td class="lao-script">ມັກ</td>
-              <td class="phonetic">mak</td>
-              <td class="notes">General 'like'</td>
-              <td><button class="audio-btn" onclick="playAudio('like.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>don't like</td>
-              <td class="lao-script">ບໍ່ມັກ</td>
-              <td class="phonetic">bɔɔ mak</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('dont_like.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>really don't like</td>
-              <td class="lao-script">ບໍ່ມັກແທ້</td>
-              <td class="phonetic">bɔɔ mak thɛ̂ɛ</td>
-              <td class="notes">Stronger emphasis</td>
-              <td><button class="audio-btn" onclick="playAudio('really_dont_like.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>What do you like to eat the most?</td>
-              <td class="lao-script">ມັກກິນຫຍັງຫຼາຍສຸດ</td>
-              <td class="phonetic">mak kin ɲǎŋ lǎai sùt</td>
-              <td class="notes">Drop "you" (ເຈົ້າ) for casual</td>
-              <td><button class="audio-btn" onclick="playAudio('like_eat_most.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I like to eat Lao food</td>
-              <td class="lao-script">ມັກກິນອາຫານລາວ</td>
-              <td class="phonetic">mak kin ǎahǎan láao</td>
-              <td class="notes">Drop "I" (ຂ້ອຍ) for casual</td>
-              <td><button class="audio-btn" onclick="playAudio('like_eat_lao_food.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Food, Ordering & Taste</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>delicious (slang)</td>
-              <td class="lao-script">ແຊບ</td>
-              <td class="phonetic">sɛ̂ɛp</td>
-              <td class="notes">Street Lao 'tasty'</td>
-              <td><button class="audio-btn" onclick="playAudio('delicious.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>very delicious</td>
-              <td class="lao-script">ແຊບຫຼາຍ</td>
-              <td class="phonetic">sɛ̂ɛp lǎai</td>
-              <td class="notes">Booster</td>
-              <td><button class="audio-btn" onclick="playAudio('very_delicious.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>no sugar</td>
-              <td class="lao-script">ບໍ່ເອົານໍ້າຕານ</td>
-              <td class="phonetic">bɔɔ ǎo nâm tǎan</td>
-              <td class="notes">Ordering drinks</td>
-              <td><button class="audio-btn" onclick="playAudio('dont_want_sugar.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>a little (qty)</td>
-              <td class="lao-script">ໜ້ອຍໜຶ່ງ</td>
-              <td class="phonetic">nɔ̂ɔi nʉŋ</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('alittlebit.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>bread</td>
-              <td class="lao-script">ເຂົ້າຈີ່</td>
-              <td class="phonetic">kha᷆o cii</td>
-              <td class="notes">Baguette culture</td>
-              <td><button class="audio-btn" onclick="playAudio('bread.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>garlic</td>
-              <td class="lao-script">ກະທຽມ</td>
-              <td class="phonetic">ká-thíam</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('garlic.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>onion</td>
-              <td class="lao-script">ຜັກບົ່ວ</td>
-              <td class="phonetic">phák bua</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('onion.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>salt</td>
-              <td class="lao-script">ເກືອ</td>
-              <td class="phonetic">kʉ̌a</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('salt.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>pepper (black)</td>
-              <td class="lao-script">ພິກໄທ</td>
-              <td class="phonetic">phik thái</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('blackpepper.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>chili pepper</td>
-              <td class="lao-script">ໝາກເຜັດ</td>
-              <td class="phonetic">ma᷆ak phét</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('chili.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Buying & Pointing</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>I want that</td>
-              <td class="lao-script">ຂ້ອຍເອົາອັນນັ້ນ</td>
-              <td class="phonetic">khɔ᷆i ǎo ăn nân</td>
-              <td class="notes">Point + phrase</td>
-              <td><button class="audio-btn" onclick="playAudio('i_want_that.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I'll try this</td>
-              <td class="lao-script">ຂ້ອຍຊິລອງອັນນີ້</td>
-              <td class="phonetic">khɔ᷆i si lɔ́ɔŋ ăn nîi</td>
-              <td class="notes">Sampling/ordering</td>
-              <td><button class="audio-btn" onclick="playAudio('ill_try_this.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>pair (of...)</td>
-              <td class="lao-script">ຄູ່</td>
-              <td class="phonetic">khuu</td>
-              <td class="notes">Classifier for pairs</td>
-              <td><button class="audio-btn" onclick="playAudio('pair.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>pen (brand loan)</td>
-              <td class="lao-script">ບິກ</td>
-              <td class="phonetic">bík</td>
-              <td class="notes">French loanword</td>
-              <td><button class="audio-btn" onclick="playAudio('pen.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Motion & Orientation</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>up/upstairs</td>
-              <td class="lao-script">ເທິງ</td>
-              <td class="phonetic">thə́ŋ</td>
-              <td class="notes">Up/above</td>
-              <td><button class="audio-btn" onclick="playAudio('up_stairs.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>down/downstairs</td>
-              <td class="lao-script">ລຸ່ມ</td>
-              <td class="phonetic">lum</td>
-              <td class="notes">Down/below</td>
-              <td><button class="audio-btn" onclick="playAudio('down_stairs.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <div class="section">
-        <h2 class="section-title">Countries & Origins</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Where are you from?</td>
-                <td class="lao-script">ເຈົ້າມາແຕ່ໃສ?</td>
-                <td class="phonetic">câo máa tɛɛ sǎi?</td>
-                <td class="notes">Lit: You come from where?</td>
-                <td><button class="audio-btn" onclick="playAudio('you_come_from_where.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-                <td>What country are you from?</td>
-                <td class="lao-script">ເຈົ້າເປັນຄົນປະເທດໃດ?</td>
-                <td class="phonetic">câo pɛn khón páthêed dǎi?</td>
-                <td class="notes">Lit: You are person country which?</td>
-                <td><button class="audio-btn" onclick="playAudio('what_country_from.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>USA</td>
-              <td class="lao-script">ອາເມລິກາ</td>
-              <td class="phonetic">aameelikaa</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('usa.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>France</td>
-              <td class="lao-script">ຝຣັ່ງເສດ</td>
-              <td class="phonetic">falangseed</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('france.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>Australia</td>
-              <td class="lao-script">ອົດສະຕາລີ</td>
-              <td class="phonetic">aasatelia</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('australia.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Canada</td>
-              <td class="lao-script">ການາດາ</td>
-              <td class="phonetic">kannaadaa</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('canada.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Vietnam</td>
-              <td class="lao-script">ຫວຽດນາມ</td>
-              <td class="phonetic">wiiadnaam</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('vietnam.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>Spain</td>
-              <td class="lao-script">ສະເປນ</td>
-              <td class="phonetic">sapen</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('spain.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Philippines</td>
-              <td class="lao-script">ຟີລິບປິນ</td>
-              <td class="phonetic">filipin</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('philippines.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>Cambodia</td>
-              <td class="lao-script">ຂະເໝນ</td>
-              <td class="phonetic">khamen</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('cambodia.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Directions</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>North</td>
-              <td class="lao-script">ເໜືອ</td>
-              <td class="phonetic">nʉ̌a</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('north.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>South</td>
-              <td class="lao-script">ໃຕ້</td>
-              <td class="phonetic">tâi</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('south.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>East</td>
-              <td class="lao-script">ຕາເວັນອອກ</td>
-              <td class="phonetic">tawɛ́n ɔɔk</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('east.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>West</td>
-              <td class="lao-script">ຕາເວັນຕົກ</td>
-              <td class="phonetic">tawɛ́n tók</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('west.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <div class="section">
-        <h2 class="section-title">Socializing & Activities</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>Will you go?</td>
-                <td class="lao-script">ຊິໄປບໍ່?</td>
-                <td class="phonetic">sì pâi bɔ̌ɔ?</td>
-                <td class="notes">Casual question</td>
-                <td><button class="audio-btn" onclick="playAudio('will_you_go.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-                <td>I'm going</td>
-                <td class="lao-script">ໂດຍ, ໄປ</td>
-                <td class="phonetic">dôoj, pâi</td>
-                <td class="notes">Polite "yes, going"</td>
-                <td><button class="audio-btn" onclick="playAudio('im_going.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-                <td>I'm not going</td>
-                <td class="lao-script">ບໍ່ໄປ</td>
-                <td class="phonetic">bɔ̌ɔ pâi</td>
-                <td class="notes"></td>
-                <td><button class="audio-btn" onclick="playAudio('im_not_going.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-                <td>Come eat with us</td>
-                <td class="lao-script">ມາກິນເຂົ້ານຳກັນ</td>
-                <td class="phonetic">mâa kin khâo nâm kán</td>
-                <td class="notes">An invitation</td>
-                <td><button class="audio-btn" onclick="playAudio('come_eat_with_us.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-                <td>Listen to music?</td>
-                <td class="lao-script">ຟັງເພງບໍ່?</td>
-                <td class="phonetic">făŋ phéeŋ bɔ̌ɔ?</td>
-                <td class="notes">Asking if someone wants to listen</td>
-                <td><button class="audio-btn" onclick="playAudio('listen_music.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-                <td>I can't come</td>
-                <td class="lao-script">ມາບໍ່ໄດ້</td>
-                <td class="phonetic">maa bɔ̌ɔ dâi</td>
-                <td class="notes"></td>
-                <td><button class="audio-btn" onclick="playAudio('cant_come.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-                <td>Stuck at work</td>
-                <td class="lao-script">ຄາວຽກ</td>
-                <td class="phonetic">khà wîak</td>
-                <td class="notes">An excuse</td>
-                <td><button class="audio-btn" onclick="playAudio('stuck_at_work.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-                <td>Liar</td>
-                <td class="lao-script">ຂີ້ຕົວະ</td>
-                <td class="phonetic">kîi tǔa</td>
-                <td class="notes">Joking or serious accusation</td>
-                <td><button class="audio-btn" onclick="playAudio('liar.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-                <td>You (plural)</td>
-                <td class="lao-script">ພວກເຈົ້າ</td>
-                <td class="phonetic">phùak câo</td>
-                <td class="notes">Addressing a group</td>
-                <td><button class="audio-btn" onclick="playAudio('you_plural.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-       <div class="section">
-        <h2 class="section-title">Advanced Food & Compliments</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>really delicious</td>
-              <td class="lao-script">ແຊບແທ້</td>
-              <td class="phonetic">sɛ̂ɛp thɛ̂ɛ</td>
-              <td class="notes">Genuine compliment</td>
-              <td><button class="audio-btn" onclick="playAudio('really_delicious.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>super delicious</td>
-              <td class="lao-script">ແຊບແຮງ</td>
-              <td class="phonetic">sɛ̂ɛp hɛ́ɛŋ</td>
-              <td class="notes">Lit: delicious strong</td>
-              <td><button class="audio-btn" onclick="playAudio('super_delicious.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-             <tr>
-              <td>crazy delicious</td>
-              <td class="lao-script">ແຊບແທ້ແຊບວ່າ</td>
-              <td class="phonetic">sɛ̂ɛp thɛ̂ɛ sɛ̂ɛp wáa</td>
-              <td class="notes">Very enthusiastic</td>
-              <td><button class="audio-btn" onclick="playAudio('crazy_delicious.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Introductions & Locating People</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>What's your name?</td>
-              <td class="lao-script">ເຈົ້າຊື່ຫຍັງ?</td>
-              <td class="phonetic">câo sūu nyǎng?</td>
-              <td class="notes">Standard question</td>
-              <td><button class="audio-btn" onclick="playAudio('whats_your_name.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>My name is ___</td>
-              <td class="lao-script">ຂ້ອຍຊື່ ___</td>
-              <td class="phonetic">khōi sūu ___</td>
-              <td class="notes">Standard answer</td>
-              <td><button class="audio-btn" onclick="playAudio('my_name_is.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I'm from ___</td>
-              <td class="lao-script">ຂ້ອຍເປັນຄົນ ___</td>
-              <td class="phonetic">khōi pèn khon ___</td>
-              <td class="notes">Answer to "Where are you from?"</td>
-              <td><button class="audio-btn" onclick="playAudio('im_from.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Who are you looking for?</td>
-              <td class="lao-script">ມາຫາໃຜ?</td>
-              <td class="phonetic">maa hăa phái?</td>
-              <td class="notes">Lit: "Come to find who?"</td>
-              <td><button class="audio-btn" onclick="playAudio('who_are_you_looking_for.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I'm looking for ___</td>
-              <td class="lao-script">ຂ້ອຍມາຫາ ___</td>
-              <td class="phonetic">khōi maa hăa ___</td>
-              <td class="notes">Lit: "I come to find ___"</td>
-              <td><button class="audio-btn" onclick="playAudio('im_looking_for.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Is ___ here?</td>
-              <td class="lao-script">___ ຢູ່ບໍ່?</td>
-              <td class="phonetic">___ yuu bɔ̌ɔ?</td>
-              <td class="notes">Asking for presence</td>
-              <td><button class="audio-btn" onclick="playAudio('is_so_and_so_here.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Yes, is here.</td>
-              <td class="lao-script">ຢູ່</td>
-              <td class="phonetic">yuu</td>
-              <td class="notes">Answer: "Yes, here."</td>
-              <td><button class="audio-btn" onclick="playAudio('yes.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>No, not here.</td>
-              <td class="lao-script">ບໍ່ຢູ່</td>
-              <td class="phonetic">bɔ̌ɔ yuu</td>
-              <td class="notes">Answer: "No, not here."</td>
-              <td><button class="audio-btn" onclick="playAudio('not_here.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Please wait a moment.</td>
-              <td class="lao-script">ຖ້າຈັກໜ້ອຍເດີ້</td>
-              <td class="phonetic">thâa cǎk nɔɔi dǝ̂ǝ</td>
-              <td class="notes">Polite request</td>
-              <td><button class="audio-btn" onclick="playAudio('please_wait_a_moment.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>He/she will be here shortly.</td>
-              <td class="lao-script">ຈັກໜ້ອຍລາວຊິມາ</td>
-              <td class="phonetic">cǎk nɔɔi láo si mâa</td>
-              <td class="notes">Lit: "A moment, he/she will come."</td>
-              <td><button class="audio-btn" onclick="playAudio('he_will_be_here_shortly.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="section">
-        <h2 class="section-title">Experience in Laos</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Have you been in Laos a long time?</td>
-              <td class="lao-script">ເຈົ້າຢູ່ລາວ_ ດົນແລ້ວບໍ່?</td>
-              <td class="phonetic">câo yuu láo dôn lέεo bɔ̌ɔ?</td>
-              <td class="notes">Common question for foreigners</td>
-              <td><button class="audio-btn" onclick="playAudio('have_you_been_in_laos_a_long_time.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Yes, a long time already.</td>
-              <td class="lao-script">ດົນແລ້ວ</td>
-              <td class="phonetic">dôn lέεo</td>
-              <td class="notes">Answer to "... a long time?"</td>
-              <td><button class="audio-btn" onclick="playAudio('yes_a_long_time_already.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>No, not long.</td>
-              <td class="lao-script">ບໍ່ດົນ</td>
-              <td class="phonetic">bɔ̌ɔ dôn</td>
-              <td class="notes">Answer to "... a long time?"</td>
-              <td><button class="audio-btn" onclick="playAudio('no_not_long.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>How many years have you been in Laos?</td>
-              <td class="lao-script">ເຈົ້າຢູ່ລາວ_ ໄດ້ຈັກປີແລ້ວ?</td>
-              <td class="phonetic">câo yuu láo dâi cák pii lέεo?</td>
-              <td class="notes">Follow-up question</td>
-              <td><button class="audio-btn" onclick="playAudio('how_many_years_in_laos.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I've been in Laos [#] years.</td>
-              <td class="lao-script">ຂ້ອຍຢູ່ລາວ_ ໄດ້ [#] ປີແລ້ວ</td>
-              <td class="phonetic">khōi yuu láo dâi [#] pii lέεo</td>
-              <td class="notes">Fill in the blank</td>
-              <td><button class="audio-btn" onclick="playAudio('ive_been_in_laos_this_many _number_of_years.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>You speak Lao really well.</td>
-              <td class="lao-script">ເຈົ້າເວົ້າພາສາລາວເກັ່ງຫຼາຍ</td>
-              <td class="phonetic">câo wâo pháasǎa láo kèŋ lǎai</td>
-              <td class="notes">A nice compliment</td>
-              <td><button class="audio-btn" onclick="playAudio('you_speak_lao_well.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Where did you learn to speak Lao?</td>
-              <td class="lao-script">ເຈົ້າຮຽນເວົ້າພາສາລາວຢູ່ໃສ?</td>
-              <td class="phonetic">câo hían wâo pháasǎa láo yuu sǎi?</td>
-              <td class="notes"></td>
-              <td><button class="audio-btn" onclick="playAudio('where_did_you_learn_to_speak_lao.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I learned at ___</td>
-              <td class="lao-script">ຂ້ອຍຮຽນຢູ່ ___</td>
-              <td class="phonetic">khōi hían yuu ___</td>
-              <td class="notes">Answer: place</td>
-              <td><button class="audio-btn" onclick="playAudio('i_learned_at.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>I learned with ___</td>
-              <td class="lao-script">ຂ້ອຍຮຽນກັບ ___</td>
-              <td class="phonetic">khōi hían kâp ___</td>
-              <td class="notes">Answer: person</td>
-              <td><button class="audio-btn" onclick="playAudio('i_learned_with_teacher_somsai.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Do you have a Lao wife?</td>
-              <td class="lao-script">ເຈົ້າມີເມຍຄົນລາວ_ ບໍ່?</td>
-              <td class="phonetic">câo mii mia khon láo bɔ̌ɔ?</td>
-              <td class="notes">Common personal question</td>
-              <td><button class="audio-btn" onclick="playAudio('do_you_have_a_lao_wife.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>Yes, I have.</td>
-              <td class="lao-script">ມີ</td>
-              <td class="phonetic">mii</td>
-              <td class="notes">Answer to "Do you have...?"</td>
-              <td><button class="audio-btn" onclick="playAudio('i_do_have.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-            <tr>
-              <td>No, I don't.</td>
-              <td class="lao-script">ບໍ່ມີ</td>
-              <td class="phonetic">bɔ̌ɔ mii</td>
-              <td class="notes">Answer to "Do you have...?"</td>
-              <td><button class="audio-btn" onclick="playAudio('no_i_dont.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    const BASE = "audio/";
-    const VERSION = 5;
-    let currentAudio = null;
-    let currentButton = null;
-
-    function playAudio(filename, button) {
-      const src = `${BASE}${filename}?v=${VERSION}`;
-      console.log("Attempting to play:", src);
-
-      // Stop any currently playing audio
-      if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        if (currentButton) {
-          currentButton.classList.remove("playing");
-        }
-      }
-
-      // Toggle off if same button clicked
-      if (currentButton === button && button.classList.contains("playing")) {
-        currentAudio = null;
-        currentButton = null;
-        button.classList.remove("playing");
-        return;
-      }
-
-      // Create and play new audio
-      const audio = new Audio(src);
-      currentAudio = audio;
-      currentButton = button;
-      button.classList.add("playing");
-
-      audio.play().catch(err => {
-        console.error("Audio playback failed:", err);
-        console.error("Tried to load:", src);
-        button.classList.remove("playing");
-      });
-
-      audio.onended = () => {
-        button.classList.remove("playing");
-        if (currentButton === button) {
-          currentAudio = null;
-          currentButton = null;
-        }
-      };
-
-      audio.onerror = () => {
-        console.error("Audio load error for:", src);
-        button.classList.remove("playing");
-      };
-    }
-  </script>
-</body>
-</html>
+<!-- ========== Experience in Laos Section ========== -->
+<div class="section">
+  <h2 class="section-title">Experience in Laos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ENGLISH</th><th>LAO SCRIPT</th><th>PRONUNCIATION</th><th>WHEN / WHY</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Have you been in Laos a long time?</td>
+        <td class="lao-script">ເຈົ້າຢູ່ລາວ_ ດົນແລ້ວບໍ່?</td>
+        <td class="phonetic">câo yuu láo dôn lέεo bɔ̌ɔ?</td>
+        <td class="notes">Common question for foreigners</td>
+        <td><button class="audio-btn" onclick="playAudio('have_you_been_in_laos_a_long_time.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>Yes, a long time already.</td>
+        <td class="lao-script">ດົນແລ້ວ</td>
+        <td class="phonetic">dôn lέεo</td>
+        <td class="notes">Answer to "... a long time?"</td>
+        <td><button class="audio-btn" onclick="playAudio('yes_a_long_time_already.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>No, not long.</td>
+        <td class="lao-script">ບໍ່ດົນ</td>
+        <td class="phonetic">bɔ̌ɔ dôn</td>
+        <td class="notes">Answer to "... a long time?"</td>
+        <td><button class="audio-btn" onclick="playAudio('no_not_long.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>How many years have you been in Laos?</td>
+        <td class="lao-script">ເຈົ້າຢູ່ລາວ_ ໄດ້ຈັກປີແລ້ວ?</td>
+        <td class="phonetic">câo yuu láo dâi cák pii lέεo?</td>
+        <td class="notes">Follow-up question</td>
+        <td><button class="audio-btn" onclick="playAudio('how_many_years_in_laos.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>I've been in Laos [#] years.</td>
+        <td class="lao-script">ຂ້ອຍຢູ່ລາວ_ ໄດ້ [#] ປີແລ້ວ</td>
+        <td class="phonetic">khōi yuu láo dâi [#] pii lέεo</td>
+        <td class="notes">Fill in the blank</td>
+        <td><button class="audio-btn" onclick="playAudio('ive_been_in_laos_two_years.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>You speak Lao really well.</td>
+        <td class="lao-script">ເຈົ້າເວົ້າພາສາລາວເກັ່ງຫຼາຍ</td>
+        <td class="phonetic">câo wâo pháasǎa láo kèŋ lǎai</td>
+        <td class="notes">A nice compliment</td>
+        <td><button class="audio-btn" onclick="playAudio('you_speak_lao_well.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <tr>
+        <td>Where did you learn to speak Lao?</td>
+        <td class="lao-script">ເຈົ້າຮຽນເວົ້າພາສາລາວຢູ່ໃສ?</td>
+        <td class="phonetic">câo hían wâo pháasǎa láo yuu sǎi?</td>
+        <td class="notes"></td>
+        <td><button class="audio-btn" onclick="playAudio('where_did_you_learn_to_speak_lao.mp3', this)"><svg viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg></button></td>
+      </tr>
+      <!-- ... other rows unchanged ... -->
+    </tbody>
+  </table>
+</div>
